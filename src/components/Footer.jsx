@@ -6,9 +6,9 @@ function Footer() {
 	const { t } = useLanguage();
 
 	return (
-		<footer className="fixed bottom-0 w-full px-4 py-3">
-	  <div className="w-full bg-white/80 dark:bg-gray-600/20 backdrop-blur-xl shadow-md rounded-full">
-    	<div className="max-w-6xl mx-auto px-6 py-1 flex flex-col items-center gap-6">
+		<footer className="fixed bottom-4 left-0 w-full px-4">
+	  <div className="w-full bg-white/80 dark:bg-gray-600/20 backdrop-blur-xl shadow-md rounded-full py-2 pb-2">
+    	<div className="max-w-6xl mx-auto px-3 flex flex-col items-center gap-4">
 				{/*Social icons*/}
 				<div className="flex gap-5">
 					<a href="http://julioym.asteroi.dev/" target="_blank" rel="noreferrer"

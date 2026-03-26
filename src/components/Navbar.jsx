@@ -88,7 +88,7 @@ function Navbar() {
             <div className="flex flex-col gap-4">
               <div className="flex gap-4">
               <Link to="/cart"
-              className="fw-full flex items-center justify-center font-bold text-center text-base hover:text-gray-500 dark:hover:text-green-500 rounded">
+              className="fw-full flex items-center justify-center font-bold text-center hover:text-gray-500 dark:hover:text-green-500 rounded">
                 <GiShoppingCart size={26}/>{t("viewCart")}
               </Link>
               <div className="flex flex-col items-center">

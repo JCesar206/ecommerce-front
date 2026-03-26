@@ -1,23 +1,23 @@
-import { createContext, useState, useEffect, useContext } from "react";
-
+import { createContext, useContext, useEffect, useState } from "react";
 const ThemeContext = createContext();
+
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "light"
-  );
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    document.documentElement.className = theme;
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
 
-  const toggleTheme = () => {
-    setTheme(prev => (prev === "light" ? "dark" : "light"));
-  };
+  const toggleTheme = () => setDark((prev) => !prev);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+    <ThemeContext.Provider
+      value={{ 
+        theme: dark ? "dark" : "light",
+        toggleTheme,
+         }}
+        >
+        {children}
     </ThemeContext.Provider>
   );
 };

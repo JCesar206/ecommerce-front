@@ -1,21 +1,25 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { translations } from "../i18n/translations";
 
 const LanguageContext = createContext();
-export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState(
-    localStorage.getItem("lang") || "es"
-  );
 
-  const changeLanguage = (newLang) => {
-    setLang(newLang);
-    localStorage.setItem("lang", newLang);
+export const LanguageProvider = ({ children }) => {
+  const [language, setLanguage] = useState("es");
+
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "es" ? "en" : "es"));
   };
 
-  const t = (key) => translations[lang][key] || key;
+  const t = (key) => translations[language][key] || key;
 
   return (
-    <LanguageContext.Provider value={{ lang, changeLanguage, t }}>
+    <LanguageContext.Provider
+      value={{
+        language,
+        toggleLanguage,
+        t
+        }}
+      >
       {children}
     </LanguageContext.Provider>
   );

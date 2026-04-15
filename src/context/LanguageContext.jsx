@@ -6,7 +6,7 @@ const LanguageContext = createContext();
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState("es");
 
-  const toggleLanguage = () => {
+  const toggleLanguageuage = () => {
     setLanguage((prev) => (prev === "es" ? "en" : "es"));
   };
 
@@ -16,7 +16,7 @@ export const LanguageProvider = ({ children }) => {
     <LanguageContext.Provider
       value={{
         language,
-        toggleLanguage,
+        toggleLanguageuage,
         t
         }}
       >

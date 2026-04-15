@@ -14,7 +14,7 @@ import ViewCart from "./ViewCart";
 function Navbar() {
   const { logout } = useAuth();
   const { theme, toggleTheme } = useTheme();
-  const { language, toggleLanguage, t } = useLanguage();
+  const { language, toggleLanguageuage, t } = useLanguage();
 
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef();
@@ -54,7 +54,7 @@ function Navbar() {
             : <FaRegSun size={22}/>}
           </button>
 
-          <button onClick={toggleLanguage} className="font-semibold cursor-pointer hover:text-gray-500">
+          <button onClick={toggleLanguageuage} className="font-semibold cursor-pointer hover:text-gray-500">
             {language === "es" 
             ? <TbLanguage className="text-3xl"/> 
             : <TbLanguageHiragana className="text-3xl"/>}
@@ -111,7 +111,7 @@ function Navbar() {
               </div>
               
               <div className="flex gap-4">
-              <button onClick={toggleLanguage}
+              <button onClick={toggleLanguageuage}
               className="w-full flex items-center justify-center gap-2 px-4 py-2 font-semibold hover:bg-gray-200 hover:text-gray-600 dark:hover:text-black rounded">
                 {language === "es" 
                 ? <><TbLanguage className="text-lg"/>{t("english")}</> 
